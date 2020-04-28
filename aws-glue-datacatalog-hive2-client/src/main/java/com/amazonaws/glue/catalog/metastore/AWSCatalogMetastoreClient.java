@@ -89,6 +89,8 @@ import org.apache.hadoop.hive.metastore.api.UnknownTableException;
 import org.apache.hadoop.hive.metastore.api.hive_metastoreConstants;
 import org.apache.hadoop.hive.metastore.api.CompactionResponse;
 import org.apache.hadoop.hive.metastore.partition.spec.PartitionSpecProxy;
+import org.apache.hadoop.hive.metastore.api.PartitionValuesRequest;
+import org.apache.hadoop.hive.metastore.api.PartitionValuesResponse;
 import org.apache.log4j.Logger;
 import org.apache.thrift.TException;
 
@@ -1778,6 +1780,12 @@ public class AWSCatalogMetastoreClient implements IMetaStoreClient {
 
     return new Path(currentUri.getScheme(), currentUri.getAuthority(),
           defaultNewPath.toUri().getPath());
+  }
+
+  @Override
+  public PartitionValuesResponse listPartitionValues(PartitionValuesRequest arg0)
+          throws MetaException, TException, NoSuchObjectException {
+    return null;
   }
 
 }
